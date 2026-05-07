@@ -1,0 +1,518 @@
+/* ============================================================
+   buliga.css – Buliga Volunteer Platform Stylesheet
+   Aesthetic: "Community in Action" — earthy greens, warm amber,
+   organic shapes, Sora typeface, purposeful & welcoming.
+   ============================================================ */
+
+/* ---------- Design Tokens ---------- */
+:root {
+    --green-deep:   #1a6b3c;
+    --green-mid:    #2d9b5a;
+    --green-light:  #5bbf85;
+    --green-pale:   #e8f7ef;
+    --amber:        #f5a623;
+    --amber-dark:   #c47d0e;
+    --amber-light:  #fff4e0;
+    --soil:         #5c3d1e;
+    --cream:        #faf8f3;
+    --text-dark:    #1c2c1c;
+    --text-muted:   #6b7b6b;
+    --surface:      #ffffff;
+    --border:       #d4e8db;
+    --shadow-sm:    0 2px 8px rgba(26,107,60,.08);
+    --shadow-md:    0 6px 24px rgba(26,107,60,.12);
+    --shadow-lg:    0 16px 48px rgba(26,107,60,.16);
+    --radius:       14px;
+    --radius-sm:    8px;
+    --radius-pill:  999px;
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6,
+.buliga-brand, .display-title {
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+}
+
+a { color: var(--green-mid); text-decoration: none; }
+a:hover { color: var(--green-deep); }
+
+/* ---------- Navbar ---------- */
+.buliga-navbar {
+    background: linear-gradient(135deg, var(--green-deep) 0%, #1e7d42 100%);
+    box-shadow: 0 2px 20px rgba(0,0,0,.15);
+    padding: 0.75rem 0;
+}
+
+.buliga-brand {
+    font-family: 'Sora', sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: #fff !important;
+    letter-spacing: -0.5px;
+}
+
+.brand-icon { font-size: 1.3rem; margin-right: 4px; }
+
+.buliga-navbar .nav-link {
+    color: rgba(255,255,255,0.85) !important;
+    font-weight: 500;
+    padding: 0.5rem 0.9rem !important;
+    border-radius: var(--radius-sm);
+    transition: background 0.2s, color 0.2s;
+}
+
+.buliga-navbar .nav-link:hover,
+.buliga-navbar .nav-link.active {
+    background: rgba(255,255,255,0.15);
+    color: #fff !important;
+}
+
+.buliga-navbar .nav-link i { margin-right: 5px; }
+
+.user-nav { color: rgba(255,255,255,0.9) !important; }
+
+.role-badge {
+    background: var(--amber);
+    color: var(--soil);
+    font-family: 'Sora', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+}
+
+.buliga-dropdown {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    padding: 0.5rem;
+}
+
+.buliga-dropdown .dropdown-item {
+    border-radius: var(--radius-sm);
+    padding: 0.5rem 0.9rem;
+    transition: background 0.15s;
+}
+
+.buliga-dropdown .dropdown-item:hover { background: var(--green-pale); }
+
+/* ---------- Buttons ---------- */
+.btn-buliga {
+    background: var(--amber);
+    color: var(--soil);
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    border: none;
+    border-radius: var(--radius-pill);
+    padding: 0.5rem 1.4rem;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+
+.btn-buliga:hover {
+    background: var(--amber-dark);
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(245,166,35,.35);
+}
+
+.btn-green {
+    background: var(--green-mid);
+    color: #fff;
+    font-family: 'Sora', sans-serif;
+    font-weight: 600;
+    border: none;
+    border-radius: var(--radius-pill);
+    padding: 0.5rem 1.4rem;
+    transition: background 0.2s, transform 0.15s;
+}
+
+.btn-green:hover {
+    background: var(--green-deep);
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.btn-outline-buliga {
+    background: transparent;
+    border: 2px solid var(--green-mid);
+    color: var(--green-mid);
+    font-family: 'Sora', sans-serif;
+    font-weight: 600;
+    border-radius: var(--radius-pill);
+    padding: 0.45rem 1.3rem;
+    transition: all 0.2s;
+}
+
+.btn-outline-buliga:hover {
+    background: var(--green-mid);
+    color: #fff;
+}
+
+/* ---------- Cards ---------- */
+.buliga-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.25s, transform 0.2s;
+    overflow: hidden;
+}
+
+.buliga-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.buliga-card .card-img-top {
+    height: 180px;
+    object-fit: cover;
+}
+
+.event-card-placeholder {
+    height: 180px;
+    background: linear-gradient(135deg, var(--green-pale) 0%, #d4eddf 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+}
+
+/* ---------- Stat Cards (Dashboard) ---------- */
+.stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--green-mid), var(--amber));
+}
+
+.stat-card .stat-value {
+    font-family: 'Sora', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--green-deep);
+    line-height: 1;
+}
+
+.stat-card .stat-label {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+}
+
+.stat-card .stat-icon {
+    position: absolute;
+    right: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.5rem;
+    opacity: 0.1;
+    color: var(--green-deep);
+}
+
+/* ---------- Page Hero ---------- */
+.page-hero {
+    background: linear-gradient(135deg, var(--green-deep) 0%, #1e7d42 60%, #2d9b5a 100%);
+    color: #fff;
+    padding: 2.5rem 0 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-hero::after {
+    content: '🌿';
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 8rem;
+    opacity: 0.08;
+    pointer-events: none;
+}
+
+.page-hero h1 { font-size: 2rem; margin-bottom: 0.4rem; }
+.page-hero p  { opacity: 0.85; margin-bottom: 0; }
+
+/* ---------- Forms ---------- */
+.buliga-form-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    padding: 2.5rem;
+}
+
+.form-label {
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: var(--text-dark);
+    margin-bottom: 0.35rem;
+}
+
+.form-control, .form-select {
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 0.6rem 0.9rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background: #fdfdfd;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--green-mid);
+    box-shadow: 0 0 0 3px rgba(45,155,90,.15);
+    outline: none;
+}
+
+/* ---------- Badges & Status ---------- */
+.status-badge {
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: var(--radius-pill);
+    font-size: 0.75rem;
+    font-weight: 700;
+    font-family: 'Sora', sans-serif;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.status-open      { background: #d4eddf; color: var(--green-deep); }
+.status-closed    { background: #f0e6d3; color: var(--soil); }
+.status-cancelled { background: #fde8e8; color: #c0392b; }
+.status-pending   { background: #fff4e0; color: var(--amber-dark); }
+.status-approved  { background: #d4eddf; color: var(--green-deep); }
+.status-rejected  { background: #fde8e8; color: #c0392b; }
+.status-completed { background: #e8f0ff; color: #2c5cf7; }
+
+/* ---------- Tables ---------- */
+.buliga-table {
+    background: var(--surface);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border);
+}
+
+.buliga-table thead th {
+    background: var(--green-pale);
+    color: var(--green-deep);
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid var(--border);
+    padding: 0.9rem 1rem;
+}
+
+.buliga-table tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+}
+
+.buliga-table tbody tr:hover { background: var(--green-pale); }
+.buliga-table tbody td { padding: 0.85rem 1rem; vertical-align: middle; }
+
+/* ---------- Alert ---------- */
+.buliga-alert {
+    border-radius: var(--radius);
+    border: none;
+    font-weight: 500;
+}
+
+/* ---------- Section Headers ---------- */
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+}
+
+.section-header h5 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+/* ---------- Public Landing ---------- */
+.landing-hero {
+    background: linear-gradient(160deg, var(--green-deep) 0%, #1e7d42 50%, #2d9b5a 100%);
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+}
+
+.landing-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.landing-hero .display-3 {
+    font-family: 'Sora', sans-serif;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.landing-hero .lead { opacity: 0.88; font-size: 1.15rem; }
+
+/* ---------- Chart Container ---------- */
+.chart-container {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.chart-title {
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+/* ---------- Auth Pages ---------- */
+.auth-wrapper {
+    min-height: 100vh;
+    background: linear-gradient(160deg, var(--green-deep) 0%, #1e7d42 50%, var(--green-mid) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.auth-card {
+    background: var(--surface);
+    border-radius: 20px;
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 440px;
+    box-shadow: 0 24px 60px rgba(0,0,0,.25);
+}
+
+.auth-logo {
+    font-family: 'Sora', sans-serif;
+    font-weight: 800;
+    font-size: 2rem;
+    color: var(--green-deep);
+    text-align: center;
+    margin-bottom: 0.25rem;
+}
+
+.auth-tagline {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    margin-bottom: 2rem;
+}
+
+/* ---------- Announcement Card ---------- */
+.announcement-card {
+    background: var(--amber-light);
+    border: 1px solid #f0d090;
+    border-left: 4px solid var(--amber);
+    border-radius: var(--radius-sm);
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.announcement-card .ann-title {
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--soil);
+}
+
+.announcement-card .ann-meta {
+    font-size: 0.78rem;
+    color: var(--amber-dark);
+    margin-top: 2px;
+}
+
+/* ---------- Empty State ---------- */
+.empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--text-muted);
+}
+
+.empty-state .empty-icon { font-size: 3.5rem; margin-bottom: 1rem; display: block; }
+.empty-state p { max-width: 300px; margin: 0 auto 1.25rem; }
+
+/* ---------- Search Bar ---------- */
+.search-bar {
+    position: relative;
+}
+
+.search-bar .bi-search {
+    position: absolute;
+    left: 0.9rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+}
+
+.search-bar input {
+    padding-left: 2.4rem;
+}
+
+/* ---------- Footer ---------- */
+.buliga-footer {
+    background: var(--green-deep);
+    color: rgba(255,255,255,.7);
+    margin-top: auto;
+}
+
+.buliga-brand-sm {
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+/* ---------- Utilities ---------- */
+.text-green  { color: var(--green-mid) !important; }
+.bg-green-pale { background: var(--green-pale) !important; }
+.fw-sora     { font-family: 'Sora', sans-serif; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+    .stat-card .stat-value { font-size: 1.7rem; }
+    .page-hero h1 { font-size: 1.5rem; }
+    .buliga-form-card { padding: 1.5rem; }
+    .auth-card { padding: 1.75rem; }
+}
