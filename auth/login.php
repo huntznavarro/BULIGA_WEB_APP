@@ -89,14 +89,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <p class="text-center mt-3 mb-0">
             <a href="/" class="small text-muted"><i class="bi bi-arrow-left"></i> Back to home</a>
         </p>
-
-        <!-- Demo credentials hint -->
-        <div class="mt-4 p-3 rounded-3 bg-green-pale small">
-            <strong class="d-block mb-1 fw-sora" style="color:var(--green-deep)">🔑 Demo Accounts</strong>
-            <div><b>Organizer:</b> organizer@buliga.edu</div>
-            <div><b>Student:</b> juan@buliga.edu</div>
-            <div class="text-muted mt-1">Password: <code>password</code></div>
-        </div>
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
